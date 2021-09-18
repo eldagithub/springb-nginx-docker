@@ -81,7 +81,7 @@ public String hello() throws UnknownHostException
      bufferedReader.close();
    }          
   } catch (Exception ex) {
-   sbf1.append("</b><br> <br>----------------------------<br>APP CONFIG FILE : NO FILE<br><br>") ; // Handle exception
+   sbf1.append("</b><br> <br>----------------------------<br>APP_FILE_CONFIG_PATH : NO FILE<br><br>") ; // Handle exception
   }
 
   sbf1.append("<br><br><br></center>");
