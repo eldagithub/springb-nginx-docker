@@ -1,0 +1,9 @@
+
+docker load -i target/sbprj-docimages.tar  
+
+
+docker run -d --rm --name host8081 -h host8081 -p 8081:8081 sbprj:latest
+docker run -d --rm --name host8082 -h host8082 -p 8082:8081 sbprj:latest
+
+#docker run -d --rm --name host8083 -h host8083 -p 8083:8081 sbprj:latest
+#docker run -d --rm --name host8084 -h host8084 -p 8084:8081 sbprj:latest

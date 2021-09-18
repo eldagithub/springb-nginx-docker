@@ -1,0 +1,11 @@
+set -x
+
+docker build -t docker-alpine -<<EOF
+FROM nginx:alpine
+ 
+COPY nginx.conf /etc/nginx/nginx.conf
+
+RUN apk update && apk add bash
+EOF
+
+docker run -t -i docker-alpine /bin/bash
