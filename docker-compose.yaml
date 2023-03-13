@@ -6,7 +6,6 @@ services:
       TZ: Europe/Zurich
       MYSBCONFIGLOCATION: /app/parms/
       MYSBCONFIGNAME: sbprjnonroot
-      MYSBLOGLEVEL: debug
     ports:
       - "8080:8080"
     volumes:
