@@ -1,14 +1,29 @@
 version: '3'
 services:
-  web:
+  sbprj01:
     image: sbprjnonroot:latest
     environment:
       TZ: Europe/Zurich
       spring.config.location: /app/parms/
       spring.config.name: somevalue
 
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     volumes:
       - /Users/elmos/OneDrive/TECH/github/springb-nginx-docker/parms:/app/parms:ro
       - /Users/elmos/OneDrive/TECH/github/springb-nginx-docker/logs:/app/logs:rw
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./src/nginxsbprj.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - sbprj01
+    ports:
+      - "4000:4000"
+networks:
+  default:
+    driver: bridge
+    name: sbprj01
+
+
+
