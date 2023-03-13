@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: sbprjnonroot:latest
+    environment:
+      TZ: Europe/Zurich
+      MYSBCONFIGNAME: sbprjnonroot
+      MYSBLOGLEVEL: debug
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/elmos/OneDrive/TECH/github/springb-nginx-docker/parms:/app/parms:ro
+      - /Users/elmos/OneDrive/TECH/github/springb-nginx-docker/logs:/app/logs:rw
