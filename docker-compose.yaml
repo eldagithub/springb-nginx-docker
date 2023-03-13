@@ -4,8 +4,9 @@ services:
     image: sbprjnonroot:latest
     environment:
       TZ: Europe/Zurich
-      MYSBCONFIGLOCATION: /app/parms/
-      MYSBCONFIGNAME: sbprjnonroot
+      spring.config.location: /app/parms/
+      spring.config.name: somevalue
+
     ports:
       - "8080:8080"
     volumes:

@@ -30,7 +30,8 @@ RUN chown us2ipgm:gs2ipgm app.jar
 USER us2ipgm
 
 
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=${MYSBCONFIGLOCATION}", "--spring.config.name=${MYSBCONFIGNAME}"]
+#ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=${MYSBCONFIGLOCATION}", "--spring.config.name=${MYSBCONFIGNAME}"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
 
 ' >  target/DockerfileNonRoot
