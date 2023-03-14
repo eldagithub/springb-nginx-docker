@@ -41,6 +41,10 @@ docker build -t sbprjnonroot -f target/DockerfileNonRoot .
 mkdir logs
 chmod 777 logs
 
+docker-compose up -d --scale sbprj01=2
+docker-compose up -d --scale sbprj01=3
+docker exec -it springb-nginx-docker_nginx_1 nginx -s reload
+
 
 
 docker save sbprj:latest -o target/sbprj-docimages.tar
